@@ -1,8 +1,7 @@
 <div ng-controller="index">
   <h1 class='page-header'>Leaderboard</h1>
-  <div class="alert alert-warning" role="alert">This is a sample page.</div>
     <section>
-      <table>
+      <table class="table">
         <thead>
           <tr class="names">
             <td>Rank</td>
@@ -13,16 +12,12 @@
         </thead>
         <tbody>
           <tr ng-repeat="game in games">
-            <td>{{game.opponent_id}}</td>
-            <td>{{game.date_played}}</td>
+            <td>{{game.rank}}</td>
+            <td>{{game.name}}</td>
             <td>{{game.score}}</td>
-            <td>{{game.opponent_score}}</td>
+            <td>{{game.games}}</td>
           </tr>
         </tbody>
       </table>
     </section>
-
-
-  <%= image_tag('leaderboard.png') %>
-
 </div>

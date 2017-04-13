@@ -7,6 +7,7 @@ angular.module('controller').controller('log', ['$scope', '$q', '$http',
     $scope.init = function () {
       $scope.users = getUsers();
       $scope.date_played = new Date();
+      $scope.error = false;
     };
     
     $scope.logGame = function(){
@@ -14,6 +15,12 @@ angular.module('controller').controller('log', ['$scope', '$q', '$http',
                      $scope.your_score == undefined || $scope.your_score == "" ||
                      $scope.their_score == undefined || $scope.their_score == "";
       if(!$scope.error) setGame();
+    };
+    
+    $scope.clean = function(){
+      $scope.date_played = new Date();
+      $scope.selected_user = undefined;
+      $scope.your_score = $scope.their_score = "";
     };
     
     $scope.init();

@@ -13,12 +13,17 @@ class HomeController < ApplicationController
   end
   
   def games
+    #TODO obtain the resulting table
+    games = {rank: 1, name: "juan", score:1800, games: 3},
+            {rank: 2, name: "pablo", score:800, games: 2},
+            {rank: 3, name: "marco", score:700, games: 1}
     respond_to do |format|
-      format.json { render :json => Game.all }
+      format.json { render :json => games }
     end
   end
   
   def setGame
+    #TODO link the game to the session user
     @game = Game.new
     @game.opponent_id = User.find_by(email: params[:opponent]).id
     @game.date_played = params[:date_played]

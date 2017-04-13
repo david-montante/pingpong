@@ -5,14 +5,14 @@
     Check for all your inputs
   </div>
 
-  <div class="row">
+  <div class="row form-group">
     <span>Date Played:</span>
-    <input type="date" ng-model="date_played"/>
+    <input type="date" ng-model="date_played" class="form-control"/>
   </div>
   
-  <div class="row">
+  <div class="row form-group">
     <span>Opponent:</span>
-    <select ng-model="selected_user"
+    <select ng-model="selected_user" class="form-control"
             ng-options="user.email for user in users">
       <option value="" selected disabled="disabled">
           Select your opponent
@@ -20,15 +20,15 @@
     </select>
   </div>
   
-  <div class="row">
+  <div class="row form-group">
     <span>Your Score:</span>
-    <input ng-model="your_score" maxlength="2"/>
+    <input ng-model="your_score" maxlength="2" class="form-control"/>
   </div>
   
-  <div class="row">
+  <div class="row form-group">
     <span>Their Score:</span>
-    <input ng-model="their_score" maxlength="2"/>
+    <input ng-model="their_score" maxlength="2" class="form-control"/>
   </div>
-    
-  <input type="button" value="Save" ng-click="logGame()"/>
+  <button type="button" class="btn btn-success" ng-click="logGame()">Save</button>
+  <button type="button" class="btn btn-primary" ng-click="clean()">Cancel</button>
 </div>

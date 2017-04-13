@@ -6,6 +6,7 @@ angular.module('controller').controller('index', ['$scope', '$q', '$http',
 
     $scope.init = function () {
       $scope.games = getGames();
+      console.log($scope.games)
     };
     
     $scope.init();
@@ -17,6 +18,5 @@ angular.module('controller').controller('index', ['$scope', '$q', '$http',
       var jsonObj = $.parseJSON(xmlHttp.responseText);
       return jsonObj;
     }
-
   }
 ]);
