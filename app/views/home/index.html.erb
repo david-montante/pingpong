@@ -1,5 +1,28 @@
-<h1 class='page-header'>Leaderboard</h1>
+<div ng-controller="index">
+  <h1 class='page-header'>Leaderboard</h1>
+  <div class="alert alert-warning" role="alert">This is a sample page.</div>
+    <section>
+      <table>
+        <thead>
+          <tr class="names">
+            <td>Rank</td>
+            <td>Name</td>
+            <td>Score</td>
+            <td>Games Played</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="game in games">
+            <td>{{game.opponent_id}}</td>
+            <td>{{game.date_played}}</td>
+            <td>{{game.score}}</td>
+            <td>{{game.opponent_score}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
-<div class="alert alert-warning" role="alert">This is a sample page.</div>
 
-<%= image_tag('leaderboard.png') %>
+  <%= image_tag('leaderboard.png') %>
+
+</div>
