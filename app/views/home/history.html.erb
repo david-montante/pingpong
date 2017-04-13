@@ -1,5 +1,24 @@
-<h1 class='page-header'>History</h1>
-
-<div class="alert alert-warning" role="alert">This is a sample page. Replace link in the header with your own.</div>
-
-<%= image_tag('history.png') %>
+<div ng-controller="history">
+  <h1 class='page-header'>History</h1>
+    <section>
+      <table class="table">
+        <thead>
+          <tr class="names">
+            <td>Date</td>
+            <td>Opponent</td>
+            <td>Score</td>
+            <td>Result</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="game in games">
+            <td>{{game.date_played}}</td>
+            <td>{{game.opponent_id}}</td>
+            <td>{{game.score}}-{{game.opponent_score}}</td>
+            <td ng-show="game.score > game.opponent_score">W</td>
+            <td ng-hide="game.score > game.opponent_score">L</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+</div>

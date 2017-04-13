@@ -22,6 +22,13 @@ class HomeController < ApplicationController
     end
   end
   
+  def history_games
+    #TODO obtain history from session user
+    respond_to do |format|
+      format.json { render :json => Game.all }
+    end
+  end
+  
   def setGame
     #TODO link the game to the session user
     @game = Game.new

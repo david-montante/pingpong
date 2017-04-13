@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/history', to: 'home#history'
   get '/log',     to: 'home#log'
   get '/users',   to: 'home#users', :defaults => { :format => 'json' }
+  get '/history_games', to: 'home#history_games', :defaults => { :format => 'json' }
   get '/games',   to: 'home#games', :defaults => { :format => 'json' }
   get '/setGame', to: 'home#setGame', :defaults => { :format => 'json' }
 end
